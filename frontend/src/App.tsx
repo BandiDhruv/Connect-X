@@ -1,16 +1,20 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Home } from './Pages/home';
+import { Login } from './Pages/login';
+import { Signup } from './Pages/signup';
 
 function App() {
   return (
-    <h1 className="w-full h-screen bg-red-500 flex flex-col items-center justify-center" >
-      <div>hi</div>
-      <div>hi</div>
-      <div>hi</div>
-      <div>hi</div>
-      <div>hi</div>
-      <div>hi</div>
-      {/* Simple React Typescript Tailwind Sample */}
-    </h1>
+    <Router>
+      <div>
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/login' element={<Login />}/>
+          <Route path='/signup' element={<Signup />}/>
+        </Routes>
+      </div>
+    </Router>
   );  
 }
 
